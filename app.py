@@ -65,7 +65,7 @@ if st.button("🚀 تحلیل و پیش‌بینی وضعیت مقاله"):
     pred_class = log_model.predict(user_input_scaled)[0]
     pred_proba = log_model.predict_proba(user_input_scaled)[0][1]
     
-    st.markdown("---\")
+    st.markdown("---")
     st.subheader("🎯 نتایج ارزیابی مدل‌ها")
     
     res_col1, res_col2 = st.columns(2)
