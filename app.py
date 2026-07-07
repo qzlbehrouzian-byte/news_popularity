@@ -13,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# تزریق استایل‌های CSS برای تم سفید خالص، نوشته‌های مشکی و کادرهای روشن
+# تزریق استایل‌های CSS برای تم سفید خالص، نوشته‌های مشکی و کادرهای پاستلی روشن
 st.markdown("""
     <style>
         /* پس‌زمینه اصلی سایت و رنگ متون پایه */
@@ -28,15 +28,25 @@ st.markdown("""
             font-weight: bold !important;
         }
         
-        /* روشن کردن پس‌زمینه کادرهای ورودی عدد و اسلایدر */
-        div[data-baseweb="input"], div[data-baseweb="base-input"] {
-            background-color: #f1f5f9 !important;
-            border: 1px solid #cbd5e1 !important;
+        /* استایل اختصاصی کادر اول: تعداد تصاویر (آبی پاستلی بسیار روشن) */
+        div[data-testid="stBlock"] [data-testid="element-container"]:nth-of-type(1) div[data-baseweb="input"] {
+            background-color: #e0f2fe !important;
+            border: 1px solid #7dd3fc !important;
             border-radius: 8px !important;
         }
+        
+        /* استایل اختصاصی کادر دوم: تعداد کلمات (سبز پاستلی بسیار روشن) */
+        div[data-testid="stBlock"] [data-testid="element-container"]:nth-of-type(2) div[data-baseweb="input"] {
+            background-color: #dcfce7 !important;
+            border: 1px solid #86efac !important;
+            border-radius: 8px !important;
+        }
+        
+        /* مشکی و ضخیم کردن عدد داخل کادرهای ورودی */
         div[data-baseweb="input"] input {
             color: #000000 !important;
             font-weight: bold !important;
+            font-size: 1.05em !important;
         }
         
         /* استایل اختصاصی دکمه اصلی (رنگ شاد و متن سفید برای خوانایی) */
@@ -52,12 +62,11 @@ st.markdown("""
             background-color: #4338ca !important;
         }
         
-        /* تغییر ظاهر کادرهای خروجی st.info و st.success به رنگ‌های بسیار روشن با متن مشکی */
+        /* تغییر ظاهر کادرهای پیش‌فرض ارور یا اعلان استریم‌لیت */
         div.stAlert {
-            background-color: #f1f5f9 !important; /* رنگ پیش‌فرض ملایم */
+            background-color: #f1f5f9 !important;
             border: 1px solid #e2e8f0 !important;
         }
-        /* کادر رگرسیون ریج (آبی بسیار روشن پاستلی با متن مشکی) */
         div[data-testid="stNotificationV2"] {
             color: #000000 !important;
         }
