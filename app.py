@@ -6,14 +6,14 @@ import seaborn as sns
 from sklearn.linear_model import LogisticRegression, Ridge
 from sklearn.preprocessing import StandardScaler
 
-# تنظیمات اولیه صفحه
+
 st.set_page_config(
     page_title="News Popularity Predictor", 
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
-# تزریق استایل‌های CSS برای تم سفید خالص، نوشته‌های مشکی و کادرهای پاستلی روشن
+
 st.markdown("""
     <style>
         /* پس‌زمینه اصلی سایت و رنگ متون پایه */
@@ -28,28 +28,28 @@ st.markdown("""
             font-weight: bold !important;
         }
         
-        /* استایل اختصاصی کادر اول: تعداد تصاویر (آبی پاستلی بسیار روشن) */
+        
         div[data-testid="stBlock"] [data-testid="element-container"]:nth-of-type(1) div[data-baseweb="input"] {
             background-color: #e0f2fe !important;
             border: 1px solid #7dd3fc !important;
             border-radius: 8px !important;
         }
         
-        /* استایل اختصاصی کادر دوم: تعداد کلمات (سبز پاستلی بسیار روشن) */
+        
         div[data-testid="stBlock"] [data-testid="element-container"]:nth-of-type(2) div[data-baseweb="input"] {
             background-color: #dcfce7 !important;
             border: 1px solid #86efac !important;
             border-radius: 8px !important;
         }
         
-        /* مشکی و ضخیم کردن عدد داخل کادرهای ورودی */
+     
         div[data-baseweb="input"] input {
             color: #000000 !important;
             font-weight: bold !important;
             font-size: 1.05em !important;
         }
         
-        /* استایل اختصاصی دکمه اصلی (رنگ شاد و متن سفید برای خوانایی) */
+       
         div.stButton > button:first-child {
             background-color: #4f46e5 !important;
             color: #ffffff !important;
@@ -62,7 +62,7 @@ st.markdown("""
             background-color: #4338ca !important;
         }
         
-        /* تغییر ظاهر کادرهای پیش‌فرض ارور یا اعلان استریم‌لیت */
+        
         div.stAlert {
             background-color: #f1f5f9 !important;
             border: 1px solid #e2e8f0 !important;
@@ -103,10 +103,10 @@ ridge_model.fit(X_scaled, y_reg)
 log_model = LogisticRegression()
 log_model.fit(X_scaled, y_cls)
 
-# طراحی رابط کاربری برنامه - کاملاً مشکی و راست‌به‌چپ
+
 st.markdown("""
     <div style="text-align: center; direction: rtl; margin-bottom: 30px;">
-        <h1 style="color: #000000; font-family: Tahoma, Geneva, sans-serif; font-size: 2.3em;">سامانه هوشمند پیش‌بینی محبوبیت اخبار آنلاین</h1>
+        <h1 style="color: #000000; font-family: Tahoma, Geneva, sans-serif; font-size: 2.3em;">سامانه هوشمند پیش‌گویی محبوبیت اخبار آنلاین</h1>
         <p style="font-size: 1.2em; color: #334155;">با تغییر ویژگی‌های زیر مشخص کنید مقاله شما چقدر در شبکه‌های اجتماعی به اشتراک گذاشته می‌شود.</p>
     </div>
 """, unsafe_allow_html=True)
@@ -126,7 +126,7 @@ with col2:
 st.markdown("<br>", unsafe_allow_html=True)
 
 # دکمه اجرای پیش‌بینی
-if st.button("🚀 تحلیل و پیش‌بینی وضعیت مقاله"):
+if st.button("🚀 تحلیل و پیش‌گویی وضعیت مقاله"):
     user_input = np.array([[num_imgs, is_weekend, n_tokens_content, global_sentiment_polarity]])
     user_input_scaled = scaler.transform(user_input)
     
@@ -140,7 +140,7 @@ if st.button("🚀 تحلیل و پیش‌بینی وضعیت مقاله"):
     
     st.markdown('<div style="text-align: right; direction: rtl;"><h2>🎯 نتایج ارزیابی مدل‌ها</h2></div>', unsafe_allow_html=True)
     
-    # طراحی باکس‌های خروجی سفارشی با پس‌زمینه فوق‌العاده روشن و متن مشکی خالص
+   
     res_col1, res_col2 = st.columns(2)
     
     with res_col1:
