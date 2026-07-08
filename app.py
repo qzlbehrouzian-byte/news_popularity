@@ -146,7 +146,7 @@ if st.button("🚀 تحلیل و پیش‌گویی وضعیت مقاله"):
     with res_col1:
         st.markdown(f"""
             <div style="background-color: #eff6ff; border-right: 5px solid #3b82f6; padding: 15px; border-radius: 8px; text-align: right; direction: rtl;">
-                <span style="color: #000000; font-weight: bold; font-size: 1.1em;">پیش‌بینی تعداد اشتراک‌گذاری (رگرسیون ریج):</span>
+                <span style="color: #000000; font-weight: bold; font-size: 1.1em;">پیش‌',fd تعداد اشتراک‌گذاری (رگرسیون ریج):</span>
                 <span style="color: #1e40af; font-weight: bold; font-size: 1.2em; margin-right: 5px;">{pred_shares} مرتبه</span>
             </div>
         """, unsafe_allow_html=True)
